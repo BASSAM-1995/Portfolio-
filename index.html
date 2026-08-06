@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio - Bassam Tarek</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg-dark: #0d0c29; --accent: #8c8cff; --card:#1a1a3a; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: var(--bg-dark);
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .slide-container {
+      position: relative;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      background: var(--card);
+    }
+
+    /* hero image via background so no big data URI is required */
+    .hero {
+      display: block;
+      width: 100%;
+      height: 360px;
+      background-image: linear-gradient(180deg, rgba(13,12,41,0.2) 0%, rgba(13,12,41,0.95) 100%),
+                        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=60");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .text-overlay {
+      padding: 32px;
+      background: linear-gradient(180deg, rgba(13,12,41,0) 0%, rgba(13,12,41,0.65) 100%);
+      position: relative;
+      margin-top: -80px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    h1 { margin: 0 0 8px 0; font-size: 1.9rem; color: #fff; }
+    .tag { color: var(--accent); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; }
+    p { margin: 12px 0 0 0; line-height: 1.6; color: #d1d1ff; font-size: 1.05rem; }
+    .actions { margin-top: 18px; display:flex; gap:12px; flex-wrap:wrap; }
+
+    a.button {
+      display:inline-block;
+      padding:10px 16px;
+      background: linear-gradient(90deg,var(--accent), #6fa6ff);
+      color: #021032;
+      font-weight:600;
+      border-radius:8px;
+      text-decoration:none;
+    }
+    a.link {
+      color: var(--accent);
+    }
+
+    .hidden-selectable {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      color: transparent;
+      user-select: text;
+      z-index: 5;
+      pointer-events: none; /* تسمح للنقر بالمرور للعناصر تحتها */
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .hero { height: 220px; }
+      .text-overlay { padding: 18px; margin-top: -60px; }
+      h1 { font-size: 1.4rem; }
+      p { font-size: 0.98rem; }
+    }
+  </style>
+</head>
+<body dir="rtl">
+  <div class="page">
+    <div class="slide-container" role="region" aria-label="Hero">
+      <div class="hero" aria-hidden="true"></div>
+
+      <div class="text-overlay">
+        <div class="hidden-selectable" aria-hidden="true"></div>
+
+        <div class="tag">Frontend Developer</div>
+        <h1>Bassam Tarek</h1>
+        <p>
+          مرحباً — أنا باسـم طارق، مطور واجهات أمامية متمرّس في بناء واجهات جميلة وسريعة باستخدام
+          HTML, CSS وJavaScript. هذه صفحة تعرض نبذة بسيطة عني وطرق التواصل.
+        </p>
+
+        <div class="actions">
+          <a class="button" href="mailto:your.email@example.com?subject=Job%20Application">أرسل لي إيميل</a>
+          <a class="link" href="Bassam_Tarek_CV.pdf" target="_blank" rel="noopener">تحميل السيرة الذاتية (PDF)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم إضافي: مشاريع مختصرة -->
+    <section style="margin-top:24px; color:#d7d7ff;">
+      <h2 style="margin:0 0 8px 0">مشاريع مختصرة</h2>
+      <ul>
+        <li>مشروع 1 — وصف قصير مع رابط عرض مباشر.</li>
+        <li>مشروع 2 — وصف قصير.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
